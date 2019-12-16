@@ -62,7 +62,7 @@
                     <a class="small" href="forgot-password.php">아이디, 비밀번호 찾기</a>
                   </div>
                   <div class="text-center">
-                    <a class="small" href="register.php">회원가입</a>
+                    <a class="small" href="signup.php">회원가입</a>
                   </div>
                 </div>
               </div>
