@@ -77,6 +77,21 @@
                     </datalist>
                   </div>
                 </div>
+                <div class="form-group row">
+                  <div class="col-sm-6 mb-3 mb-sm-0">
+                    <input list="pw_q" name="pw_q" class="form-control form-control-user" placeholder="비밀번호 찾기 질문을 선택해주세요">
+                    <datalist id="pw_q">
+                      <option value="기억남는 장소는?" seleted>
+                      <option value="초등학교 이름은?">
+                      <option value="가장 생각나는 사람의 이름은?">
+                      <option value="가장 기억남는 선생님 성함은?">
+                    </datalist>
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control form-control-user" id="exampleRepeatPassword"
+                      placeholder="비밀번호 찾기 답변을 입력해주세요">
+                  </div>
+                </div>
                 <a href="login.html" class="btn btn-primary btn-user btn-block">
                   회원가입
                 </a>
