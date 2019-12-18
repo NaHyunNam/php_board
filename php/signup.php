@@ -17,7 +17,23 @@
 
   <!-- Custom styles for this template-->
   <link href="../css/sb-admin-2.min.css" rel="stylesheet">
+  <!-- <script type="text/javascript" src="../js/validation.js"></script> !-->
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script>
+    $(function () {
+        var userid_check = $('.userid_check');
+        var user_id = $('#user_id');
 
+        //아이디 빈칸 검사
+        user_id.blur(function () {
+          if (user_id.val() == '') {
+            userid_check.text('아이디를 입력해주세요');
+          } else {
+            userid_check.text('아이디 중복체크를 해주세요');
+          }
+        });
+      });
+  </script>
 </head>
 
 <body class="bg-gradient-primary">
@@ -37,12 +53,13 @@
               <form class="user">
                 <div class="form-group row">
                   <div class="col-sm-9 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" id="exampleInputPassword" placeholder="아이디를 입력해주세요">
+                    <input type="text" class="form-control form-control-user" id="user_id" placeholder="아이디를 입력해주세요">
                   </div>
                   <div class="col-sm-3">
                     <input type="button" class="form-control btn btn-info btn-icon-split" id="exampleRepeatPassword" value="중복검사">
                   </div>
                 </div>
+                  <div class="userid_check"></div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
                     <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="비밀번호를 입력해주세요">
@@ -92,7 +109,7 @@
                       placeholder="비밀번호 찾기 답변을 입력해주세요">
                   </div>
                 </div>
-                <a href="login.html" class="btn btn-primary btn-user btn-block">
+                <a href="#" class="btn btn-primary btn-user btn-block" onclick="signup_vai()">
                   회원가입
                 </a>
                 <hr>
