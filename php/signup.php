@@ -54,8 +54,8 @@
                     <input type="password" class="form-control form-control-user" id="user_pw2" placeholder="비밀번호 확인을 8 ~ 20자리로 입력해주세요">
                   </div>
                 </div>
-                <div class="form-group user_pw_check"></div>
-                <div class="form-group user_pw2_check"></div>
+                <div class="form-group user_pw_check" style="display: inline;"></div>
+                <div class="form-group user_pw2_check" style="display: inline;"></div>
                 <div class="form-group">
                   <input type="text" class="form-control form-control-user" id="user_name" placeholder="이름을 입력해주세요">
                 </div>
@@ -85,8 +85,8 @@
                     </datalist>
                   </div>
                 </div>
-                <div class="form-group user_email_check"></div>
-                <div class="form-group user_email2_check"></div>
+                <div class="form-group user_email_check" style="display: inline;"></div>
+                <div class="form-group user_email2_check" style="display: inline;"></div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
                     <input list="pw_q" name="pw_q" class="form-control form-control-user" placeholder="비밀번호 찾기 질문을 선택해주세요" id="user_pw_q">
@@ -102,8 +102,8 @@
                       placeholder="비밀번호 찾기 답변을 입력해주세요">
                   </div>
                 </div>
-                <div class="form-group user_pw_q_check"></div>
-                <div class="form-group user_pw_a_check"></div>
+                <div class="form-group user_pw_q_check" style="display: inline;"></div>
+                <div class="form-group user_pw_a_check" style="display: inline;"></div>
                 <input type="hidden" class="signup_ok_check" name="signup_ok_check" value="0">
                 <input type="button" class="btn btn-primary btn-user btn-block" value="회원가입" id="signup_btn" disabled>
                 <hr>
