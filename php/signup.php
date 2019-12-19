@@ -19,21 +19,7 @@
   <link href="../css/sb-admin-2.min.css" rel="stylesheet">
   <!-- <script type="text/javascript" src="../js/validation.js"></script> !-->
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-  <script>
-    $(function () {
-        var userid_check = $('.userid_check');
-        var user_id = $('#user_id');
-
-        //아이디 빈칸 검사
-        user_id.blur(function () {
-          if (user_id.val() == '') {
-            userid_check.text('아이디를 입력해주세요');
-          } else {
-            userid_check.text('아이디 중복체크를 해주세요');
-          }
-        });
-      });
-  </script>
+  <script type="text/javascript" src="../js/validation.js"></script>
 </head>
 
 <body class="bg-gradient-primary">
@@ -59,7 +45,7 @@
                     <input type="button" class="form-control btn btn-info btn-icon-split" id="exampleRepeatPassword" value="중복검사">
                   </div>
                 </div>
-                  <div class="userid_check"></div>
+                  <div class="form-group userid_check"></div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
                     <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="비밀번호를 입력해주세요">
@@ -109,9 +95,8 @@
                       placeholder="비밀번호 찾기 답변을 입력해주세요">
                   </div>
                 </div>
-                <a href="#" class="btn btn-primary btn-user btn-block" onclick="signup_vai()">
-                  회원가입
-                </a>
+                <input type="hidden" class="signup_ok_check" name="signup_ok_check" value="0">
+                <input type="button" class="btn btn-primary btn-user btn-block" value="회원가입" id="signup_btn">
                 <hr>
                 <a href="index.php" class="btn btn-google btn-user btn-block">
                   <i class="fab fa-google fa-fw"></i> 구글 계정으로 회원가입
