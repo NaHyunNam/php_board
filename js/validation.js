@@ -15,9 +15,9 @@ $(function () {
   var user_name = $('#user_name'); // 이름 input
   var user_phone = $('#user_phone'); // 전화번호 input
   var user_birth = $('#user_birth'); // 생일 input
-  var user_email = $('#user_email'); // 이메일 앞자리 input
+  var user_email1 = $('#user_email1'); // 이메일 앞자리 input
   var user_email2 = $('#user_email2'); // 이메일 뒷자리 input
-  var user_pw_q = $('#user_pw_q'); // 유저 비밀번호 질문 input
+  var user_pw_q1 = $('#user_pw_q1'); // 유저 비밀번호 질문 input
   var user_pw_a = $('#user_pw_a'); // 유저 비밀번호 질문 답변 input
   var user_id_ok, user_pw_ok, user_pw2_ok, user_name_ok, user_phone_ok, user_birth_ok, user_email_ok, user_email2_ok, user_pw_q_ok, user_pw_a_ok = 0; // 각 항목 벨리데이션 확인 값
   //var signup_ok_check = $('.signup_ok_check'); // 회원가입 벨리데이션 확인 input hidden
@@ -115,9 +115,9 @@ $(function () {
   });
   
   // 이메일 앞자리 벨리데이션 검사
-  user_email.blur(function () {
-    if (user_email.val() == '') {
-      user_email_ok = 1;
+  user_email1.blur(function () {
+    if (user_email1.val() == '') {
+      user_email1 = 1;
       user_email_check.html("<span style='color : red; font-weight: bold;'>이메일 앞자리를 입력해주세요<span>");
       $().signup_ok_check();
     } else {
@@ -141,8 +141,8 @@ $(function () {
   });
 
   // 유저 비밀번호 질문 벨리데이션 검사
-  user_pw_q.blur(function () {
-    if (user_pw_q.val() == '') {
+  user_pw_q1.blur(function () {
+    if (user_pw_q1.val() == '') {
       user_pw_q_ok = 1;
       user_pw_q_check.html("<span style='color : red; font-weight: bold;'>비밀번호 찾기 질문을 선택해주세요<span>");
       $().signup_ok_check();

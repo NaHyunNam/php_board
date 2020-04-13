@@ -36,10 +36,10 @@
               <div class="text-center">
                 <h1 class="h4 text-gray-900 mb-4">회원가입을 해주세요</h1>
               </div>
-              <form class="user">
+              <form class="user" method="POST" action="signup_ok.php">
                 <div class="form-group row">
                   <div class="col-sm-9 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" id="user_id" placeholder="아이디를 4 ~ 15자리로 입력해주세요">
+                    <input type="text" class="form-control form-control-user" id="user_id" placeholder="아이디를 4 ~ 15자리로 입력해주세요" name="user_id">
                   </div>
                   <div class="col-sm-3">
                     <input type="button" class="form-control btn btn-info btn-icon-split" id="exampleRepeatPassword" value="중복검사">
@@ -48,7 +48,7 @@
                   <div class="form-group user_id_check"></div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="password" class="form-control form-control-user" id="user_pw" placeholder="비밀번호를 8 ~ 20자리로 입력해주세요">
+                    <input type="password" class="form-control form-control-user" id="user_pw" placeholder="비밀번호를 8 ~ 20자리로 입력해주세요" name="user_pw">
                   </div>
                   <div class="col-sm-6">
                     <input type="password" class="form-control form-control-user" id="user_pw2" placeholder="비밀번호 확인을 8 ~ 20자리로 입력해주세요">
@@ -57,20 +57,20 @@
                 <div class="form-group user_pw_check" style="display: inline;"></div>
                 <div class="form-group user_pw2_check" style="display: inline;"></div>
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="user_name" placeholder="이름을 입력해주세요">
+                  <input type="text" class="form-control form-control-user" id="user_name" placeholder="이름을 입력해주세요" name="user_name">
                 </div>
                 <div class="form-group user_name_check"></div>
                 <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="user_phone" placeholder="휴대폰 번호를 입력해주세요">
+                  <input type="text" class="form-control form-control-user" id="user_phone" placeholder="휴대폰 번호를 입력해주세요" name="user_phone">
                 </div>
                 <div class="form-group user_phone_check"></div>
                 <div class="form-group">
-                  <input type="date" class="form-control form-control-user" id="user_birth">
+                  <input type="date" class="form-control form-control-user" id="user_birth" name="user_birth">
                 </div>
                 <div class="form-group user_birth_check"></div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" id="user_email" placeholder="이메일을 입력해주세요">
+                    <input type="text" class="form-control form-control-user" id="user_email1" placeholder="이메일을 입력해주세요" name="user_email1">
                   </div>
                   <div class="col-sm-1">
                     <span style="font-size: 25pt;font-weight: bold;">@</span>
@@ -89,8 +89,8 @@
                 <div class="form-group user_email2_check" style="display: inline;"></div>
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input list="pw_q" name="pw_q" class="form-control form-control-user" placeholder="비밀번호 찾기 질문을 선택해주세요" id="user_pw_q">
-                    <datalist id="pw_q">
+                    <input list="user_pw_q1" name="user_pw_q" class="form-control form-control-user" placeholder="비밀번호 찾기 질문을 선택해주세요" id="user_pw_q1">
+                    <datalist id="user_pw_q1">
                       <option value="기억남는 장소는?" seleted>
                       <option value="초등학교 이름은?">
                       <option value="가장 생각나는 사람의 이름은?">
@@ -99,13 +99,13 @@
                   </div>
                   <div class="col-sm-6">
                     <input type="text" class="form-control form-control-user" id="user_pw_a"
-                      placeholder="비밀번호 찾기 답변을 입력해주세요">
+                      placeholder="비밀번호 찾기 답변을 입력해주세요" name="user_pw_a">
                   </div>
                 </div>
                 <div class="form-group user_pw_q_check" style="display: inline;"></div>
                 <div class="form-group user_pw_a_check" style="display: inline;"></div>
                 <input type="hidden" class="signup_ok_check" name="signup_ok_check" value="0">
-                <input type="button" class="btn btn-primary btn-user btn-block" value="회원가입" id="signup_btn" disabled>
+                <input type="submit" class="btn btn-primary btn-user btn-block" value="회원가입" id="signup_btn" disabled>
                 <hr>
                 <a href="index.php" class="btn btn-google btn-user btn-block">
                   <i class="fab fa-google fa-fw"></i> 구글 계정으로 회원가입
