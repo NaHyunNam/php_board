@@ -42,7 +42,7 @@
                     <input type="text" class="form-control form-control-user" id="user_id" placeholder="아이디를 4 ~ 15자리로 입력해주세요" name="user_id">
                   </div>
                   <div class="col-sm-3">
-                    <input type="button" class="form-control btn btn-info btn-icon-split" id="exampleRepeatPassword" value="중복검사">
+                    <input type="button" class="form-control btn btn-info btn-icon-split" id="id_same_check" value="중복검사">
                   </div>
                 </div>
                   <div class="form-group user_id_check"></div>
@@ -68,42 +68,6 @@
                   <input type="date" class="form-control form-control-user" id="user_birth" name="user_birth">
                 </div>
                 <div class="form-group user_birth_check"></div>
-                <div class="form-group row">
-                  <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input type="text" class="form-control form-control-user" id="user_email1" placeholder="이메일을 입력해주세요" name="user_email1">
-                  </div>
-                  <div class="col-sm-1">
-                    <span style="font-size: 25pt;font-weight: bold;">@</span>
-                  </div>
-                  <div class="col-sm-5">
-                    <input list="user_email_domain" name="user_email2" class="form-control form-control-user" placeholder="이메일을 선택해주세요" id="user_email2">
-                    <datalist id="user_email_domain">
-                      <option value="naver.com" seleted>
-                      <option value="google.com">
-                      <option value="daum.net">
-                      <option value="nate.com">
-                    </datalist>
-                  </div>
-                </div>
-                <div class="form-group user_email_check" style="display: inline;"></div>
-                <div class="form-group user_email2_check" style="display: inline;"></div>
-                <div class="form-group row">
-                  <div class="col-sm-6 mb-3 mb-sm-0">
-                    <input list="user_pw_q1" name="user_pw_q" class="form-control form-control-user" placeholder="비밀번호 찾기 질문을 선택해주세요" id="user_pw_q1">
-                    <datalist id="user_pw_q1">
-                      <option value="기억남는 장소는?" seleted>
-                      <option value="초등학교 이름은?">
-                      <option value="가장 생각나는 사람의 이름은?">
-                      <option value="가장 기억남는 선생님 성함은?">
-                    </datalist>
-                  </div>
-                  <div class="col-sm-6">
-                    <input type="text" class="form-control form-control-user" id="user_pw_a"
-                      placeholder="비밀번호 찾기 답변을 입력해주세요" name="user_pw_a">
-                  </div>
-                </div>
-                <div class="form-group user_pw_q_check" style="display: inline;"></div>
-                <div class="form-group user_pw_a_check" style="display: inline;"></div>
                 <input type="hidden" class="signup_ok_check" name="signup_ok_check" value="0">
                 <input type="submit" class="btn btn-primary btn-user btn-block" value="회원가입" id="signup_btn" disabled>
                 <hr>
