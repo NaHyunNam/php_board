@@ -92,28 +92,57 @@ session_start();
         ?>    
         </nav>
         <!-- End of Topbar -->
-
-        <!-- Begin Page Content -->
-        <div class="container-fluid">
-        <div class="p-5">
-              <div class="text-center">
-                <h1 class="h4 text-gray-900 mb-4">게시글을 작성 해주세요</h1>
-              </div>
-              <form class="user" method="POST" action="write_ok.php">
-                <div class="form-group">
-                  <input type="text" class="form-control form-control-user" id="bo_title" placeholder="게시글 제목을 입력해주세요" name="bo_title">
-                </div>
-                  <div class="form-group user_id_check"></div>
-                <div class="form-group">
-                  <textarea class="form-control" id="bo_text" placeholder="게시글 내용을 입력해주세요" name="bo_text" rows="20" cols="50"></textarea>    
-                </div>
-                <input type="submit" class="btn btn-primary btn-user btn-block" value="게시글 올리기" id="write_btn">
-              </form>
+          
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">전체 글 조회</h6>
+            </div>
+            <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>내용</th>
+                    <th>작성일</th>
+                    <th>수정일</th>
+                    <th>작성자</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <td>Shad Decker</td>
+                    <td>Regional Director</td>
+                    <td>Edinburgh</td>
+                    <td>51</td>
+                    <td>2008/11/13</td>
+                    <td>$183,000</td>
+                    </tr>
+                    <tr>
+                    <td>Michael Bruce</td>
+                    <td>Javascript Developer</td>
+                    <td>Singapore</td>
+                    <td>29</td>
+                    <td>2011/06/27</td>
+                    <td>$183,000</td>
+                    </tr>
+                    <tr>
+                    <td>Donna Snider</td>
+                    <td>Customer Support</td>
+                    <td>New York</td>
+                    <td>27</td>
+                    <td>2011/01/25</td>
+                    <td>$112,000</td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
             </div>
         </div>
         </div>
-      <!-- End of Main Content -->
-
+        <!-- /.container-fluid -->
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
