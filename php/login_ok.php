@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once 'connect.php';
 $login_user_id = $_POST['login_user_id'];
 $login_user_pw = $_POST['login_user_pw'];
@@ -14,9 +15,11 @@ $result = mysqli_query($conn, $sql1);
 $result_row = $result->num_rows;
 $row = mysqli_fetch_array($result);
 if($result_row > 0){
+    $session_name = $_SESSION['id'] = $row['user_id'];
+    $session_name = $_SESSION['name'] = $row['user_name'];
     echo "
         <script>
-            alert('로그인 성공');
+            alert('{$session_name}님 환영합니다.');
             location.href='index.php';
         </script>
     ";
@@ -28,4 +31,5 @@ if($result_row > 0){
         </script>
     ";
 }
+
 ?>
