@@ -96,50 +96,64 @@ session_start();
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">전체 글 조회</h6>
+            <h6 class="m-0 font-weight-bold text-primary">글 보기</h6>
             </div>
             <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                    <th>번호</th>
-                    <th>제목</th>
-                    <th>작성일</th>
-                    <th>수정일</th>
-                    <th>작성자</th>
-                    <th>글보기</th>
+                    <th colspan="2" style="text-align:center">게시글 보기</th>
                     </tr>
                 </thead>
                 <tbody>
                 <?php
                     include_once "connect.php";
+                    $get_bo_no = $_GET['bo_no'];
 
                     $sql = "
                         SELECT 
                             bo_no,
                             bo_title,
+                            bo_text,
                             bo_regdate,
                             bo_editdate,
                             user_name
                         FROM TB_user AS u, TB_board AS b
-                        WHERE u.user_no = b.bo_regno;
+                        WHERE u.user_no = b.bo_regno
+                        AND bo_no = {$get_bo_no};
                     ";
 
                     $result = mysqli_query($conn, $sql);
-                    while($row = mysqli_fetch_array($result)) {
+                    $row = mysqli_fetch_array($result)
                     ?>
                         <tr>
-                        <td><?=$row['bo_no']?></td>
-                        <td><?=$row['bo_title']?></td>
-                        <td><?=$row['bo_regdate']?></td>
-                        <td><?=$row['bo_editdate']?></td>
-                        <td><?=$row['user_name']?></td>
-                        <td><a href="board_detail_view.php?bo_no=<?=$row['bo_no']?>">글보기</a></td>
+                            <td>글 번호</td>
+                            <td><?=$row['bo_no']?></td>
                         </tr>
-                <?php
-                    }
-                ?>
+                        <tr>    
+                            <td>글 제목</td>
+                            <td><?=$row['bo_title']?></td>
+                        </tr>
+                        <tr>
+                            <td>글 내용</td>
+                            <td><?=$row['bo_text']?></td>
+                        </tr>    
+                        <tr>
+                            <td>글 작성일</td>
+                            <td><?=$row['bo_regdate']?></td>
+                        </tr>
+                        <tr>  
+                            <td>글 수정일</td>  
+                            <td><?=$row['bo_editdate']?></td>
+                        </tr>
+                        <tr>
+                            <td>글 작성자</td>    
+                            <td><?=$row['user_name']?></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="text-align:center"><a href="index.php">메인으로</a></td>
+                        </tr>    
                 </tbody>
                 </table>
             </div>

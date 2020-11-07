@@ -96,7 +96,7 @@ session_start();
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">전체 글 조회</h6>
+            <h6 class="m-0 font-weight-bold text-primary">내가 쓴 글 조회</h6>
             </div>
             <div class="card-body">
             <div class="table-responsive">
@@ -109,12 +109,14 @@ session_start();
                     <th>수정일</th>
                     <th>작성자</th>
                     <th>글보기</th>
+                    <th>글수정</th>
+                    <th>글삭제</th>
                     </tr>
                 </thead>
                 <tbody>
                 <?php
                     include_once "connect.php";
-
+                    $login_user = $_SESSION['id'];
                     $sql = "
                         SELECT 
                             bo_no,
@@ -123,10 +125,21 @@ session_start();
                             bo_editdate,
                             user_name
                         FROM TB_user AS u, TB_board AS b
-                        WHERE u.user_no = b.bo_regno;
+                        WHERE u.user_no = b.bo_regno
+                        AND u.user_id = '{$login_user}'
+                        ORDER BY bo_no ASC;
                     ";
 
                     $result = mysqli_query($conn, $sql);
+                    if($row = mysqli_fetch_array($result) == null){
+                      
+                      echo "
+                        <tr>
+                          <td colspan='8' style='text-align:center;'>게시글이 없습니다.</td>
+                        </tr>
+                          ";
+
+                    }else{
                     while($row = mysqli_fetch_array($result)) {
                     ?>
                         <tr>
@@ -136,9 +149,12 @@ session_start();
                         <td><?=$row['bo_editdate']?></td>
                         <td><?=$row['user_name']?></td>
                         <td><a href="board_detail_view.php?bo_no=<?=$row['bo_no']?>">글보기</a></td>
+                        <td><a href="board_alter.php?bo_no=<?=$row['bo_no']?>">수정</a></td>
+                        <td><a href="board_delete.php?bo_no=<?=$row['bo_no']?>">삭제</a></td>
                         </tr>
                 <?php
                     }
+                  }   
                 ?>
                 </tbody>
                 </table>

@@ -39,7 +39,7 @@ if($_SESSION['id'] != null){
     <div class="bg-white py-2 collapse-inner rounded">
       <h6 class="collapse-header">선택해주세요</h6>
       <a class="collapse-item" href="all_board_view.php">전체 글 조회</a>
-      <a class="collapse-item" href="cards.php">내가 쓴 글 조회</a>
+      <a class="collapse-item" href="my_board_view.php">내가 쓴 글 조회</a>
     </div>
   </div>
 </li>
