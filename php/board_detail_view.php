@@ -111,7 +111,7 @@ session_start();
                     include_once "connect.php";
                     $get_bo_no = $_GET['bo_no'];
 
-                    $sql = "
+                    $sql1 = "
                         SELECT 
                             bo_no,
                             bo_title,
@@ -124,32 +124,32 @@ session_start();
                         AND bo_no = {$get_bo_no};
                     ";
 
-                    $result = mysqli_query($conn, $sql);
-                    $row = mysqli_fetch_array($result)
+                    $result1 = mysqli_query($conn, $sql1);
+                    $row1 = mysqli_fetch_array($result1)
                     ?>
                         <tr>
                             <td>글 번호</td>
-                            <td><?=$row['bo_no']?></td>
+                            <td><?=$row1['bo_no']?></td>
                         </tr>
                         <tr>    
                             <td>글 제목</td>
-                            <td><?=$row['bo_title']?></td>
+                            <td><?=$row1['bo_title']?></td>
                         </tr>
                         <tr>
                             <td>글 내용</td>
-                            <td><?=$row['bo_text']?></td>
+                            <td><?=$row1['bo_text']?></td>
                         </tr>    
                         <tr>
                             <td>글 작성일</td>
-                            <td><?=$row['bo_regdate']?></td>
+                            <td><?=$row1['bo_regdate']?></td>
                         </tr>
                         <tr>  
                             <td>글 수정일</td>  
-                            <td><?=$row['bo_editdate']?></td>
+                            <td><?=$row1['bo_editdate']?></td>
                         </tr>
                         <tr>
                             <td>글 작성자</td>    
-                            <td><?=$row['user_name']?></td>
+                            <td><?=$row1['user_name']?></td>
                         </tr>
                         <tr>
                             <td colspan="2" style="text-align:center"><a href="index.php">메인으로</a></td>
@@ -164,16 +164,18 @@ session_start();
                     <h6 class="m-0 font-weight-bold text-primary">댓글달기</h6>
                 </div>
                 <div class="card-body"> 
-                    <form class="user" method="POST" action="write_ok.php">
+                    <form class="user" method="POST" action="comment_ok.php">
                     <div class="form-group">
-                    <input type="text" class="form-control form-control-user" id="bo_title" placeholder="게시글 제목을 입력해주세요" name="bo_title">
+                    <textarea class="form-control" id="co_text" placeholder="댓글 내용을 입력해주세요" name="co_text" rows="5" cols="50"></textarea>    
                     </div>
-                    <div class="form-group user_id_check"></div>
-                    <div class="form-group">
-                    <textarea class="form-control" id="bo_text" placeholder="게시글 내용을 입력해주세요" name="bo_text" rows="20" cols="50"></textarea>    
-                    </div>
-                    <input type="submit" class="btn btn-primary btn-user btn-block" value="게시글 올리기" id="write_btn">
+                    <input type="hidden" value="<?=$get_bo_no?>" name="co_bono" id="co_bono">
+                    <input type="submit" class="btn btn-primary btn-user btn-block" value="저장" id="comment_btn">
                 </form>
+                </div>
+                <div class="card-body"> 
+                    <?php
+                        include_once "comment_view.php"
+                    ?>
                 </div>
             </div>
         </div>

@@ -131,15 +131,6 @@ session_start();
                     ";
 
                     $result = mysqli_query($conn, $sql);
-                    if($row = mysqli_fetch_array($result) == null){
-                      
-                      echo "
-                        <tr>
-                          <td colspan='8' style='text-align:center;'>게시글이 없습니다.</td>
-                        </tr>
-                          ";
-
-                    }else{
                     while($row = mysqli_fetch_array($result)) {
                     ?>
                         <tr>
@@ -154,7 +145,6 @@ session_start();
                         </tr>
                 <?php
                     }
-                  }   
                 ?>
                 </tbody>
                 </table>

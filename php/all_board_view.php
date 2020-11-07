@@ -127,7 +127,7 @@ session_start();
                     ";
 
                     $result = mysqli_query($conn, $sql);
-                    while($row = mysqli_fetch_array($result)) {
+                    while($row = mysqli_fetch_array($result)){
                     ?>
                         <tr>
                         <td><?=$row['bo_no']?></td>
@@ -138,7 +138,7 @@ session_start();
                         <td><a href="board_detail_view.php?bo_no=<?=$row['bo_no']?>">글보기</a></td>
                         </tr>
                 <?php
-                    }
+                }  
                 ?>
                 </tbody>
                 </table>
