@@ -158,8 +158,28 @@ session_start();
                 </table>
             </div>
             </div>
+            <hr class="sidebar-divider d-none d-md-block">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">댓글달기</h6>
+                </div>
+                <div class="card-body"> 
+                    <form class="user" method="POST" action="write_ok.php">
+                    <div class="form-group">
+                    <input type="text" class="form-control form-control-user" id="bo_title" placeholder="게시글 제목을 입력해주세요" name="bo_title">
+                    </div>
+                    <div class="form-group user_id_check"></div>
+                    <div class="form-group">
+                    <textarea class="form-control" id="bo_text" placeholder="게시글 내용을 입력해주세요" name="bo_text" rows="20" cols="50"></textarea>    
+                    </div>
+                    <input type="submit" class="btn btn-primary btn-user btn-block" value="게시글 올리기" id="write_btn">
+                </form>
+                </div>
+            </div>
         </div>
         </div>
+
+        
         <!-- /.container-fluid -->
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
