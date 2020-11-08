@@ -22,11 +22,11 @@
                         <tr>
                             <td><?=$row2['user_name']?></td>
                             <td><?=$row2['co_editdate']?></td>
-                            <td><a href="comment_alter.php?co_no=<?=$row2['co_no']?>">수정</a></td>
+                            <td><input type="button" class="form-control btn btn-info btn-icon-split" id="comment_alter_btn" value="수정"></td>
                             <td><a href="comment_delete.php?co_no=<?=$row2['co_no']?>&bo_no=<?=$get_bo_no?>">삭제</a></td>
                         </tr>
                         <tr>    
-                            <td colspan="4"><?=$row2['co_text']?></td>    
+                            <td colspan="4"><span id="alter_text"><?=$row2['co_text']?></span></td>    
                         </tr>
                     <?php
                     }else{
@@ -36,7 +36,7 @@
                             <td><?=$row2['co_editdate']?></td>
                         </tr>
                         <tr>    
-                            <td colspan="2"><?=$row2['co_text']?></td>    
+                            <td colspan="2"><span><?=$row2['co_text']?></span></td>    
                         </tr>
                   <?php      
                         }

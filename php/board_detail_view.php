@@ -5,7 +5,6 @@ session_start();
 <html lang="en">
 
 <head>
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -20,7 +19,14 @@ session_start();
 
   <!-- Custom styles for this template-->
   <link href="../css/sb-admin-2.min.css" rel="stylesheet">
- 
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script>
+      $(function() {
+        $("#comment_alter_btn").on("click", function() {
+        $("#alter_text").replaceWith("<input type='text'>");
+        });
+    });
+  </script>
 </head>
 
 <body id="page-top">
@@ -171,6 +177,9 @@ session_start();
                     <input type="hidden" value="<?=$get_bo_no?>" name="co_bono" id="co_bono">
                     <input type="submit" class="btn btn-primary btn-user btn-block" value="저장" id="comment_btn">
                 </form>
+                </div>
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">댓글리스트</h6>
                 </div>
                 <div class="card-body"> 
                     <?php

@@ -33,18 +33,6 @@ $(function () {
     }
   });
 
-  $('#id_same_check').click(
-    $.ajax({
-      url: 'idcheck.php',
-      type: 'POST',
-      data: {'id':$('#user_id').val()},
-      dataType: 'html',
-      success:function(data){
-        alert(data);
-      }
-    })
-  );
-
   // 패스워드 벨리데이션 검사
   user_pw.blur(function () {
     if (user_pw.val() == '') {
@@ -126,6 +114,5 @@ $(function () {
       signup_btn.prop("disabled", true);
     }
   };
-
 });
 
